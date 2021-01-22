@@ -1,0 +1,27 @@
+/*
+  simple hello world sketch
+  Andrew Tridgell September 2011
+*/
+
+#include <AP_HAL/AP_HAL.h>
+
+void setup();
+void loop();
+
+const AP_HAL::HAL& hal = AP_HAL::get_HAL();
+
+void setup()
+{
+    hal.console->printf("hello world\n");
+}
+
+void loop()
+{
+  for(int i=1; i<100; i++) {
+
+  hal.scheduler->delay(1000);
+  hal.console->printf("bye bye! %d\n", i);
+
+  }
+}
+AP_HAL_MAIN();
